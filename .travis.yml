@@ -4,7 +4,7 @@ node_js:
 
 branches:
   only:
-    - main   # or master (check your default branch name on GitHub)
+    - dep-inclusions   # ✅ your active branch for this lab
 
 cache:
   directories:
@@ -13,7 +13,6 @@ cache:
 install:
   - npm install --legacy-peer-deps
   - npm install -g yarn
-
 
 script:
   # - yarn lint   # (keep commented for now)
@@ -26,4 +25,4 @@ deploy:
   github_token: $github_token
   local_dir: build
   on:
-    branch: main   # or master if that's your default branch
+    branch: dep-inclusions   # ✅ must match the branch you’re working in
