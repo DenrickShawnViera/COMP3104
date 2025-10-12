@@ -13,9 +13,8 @@ cache:
 install:
   - npm install --legacy-peer-deps
   - npm install -g yarn
-
 script:
-  # - yarn lint   # (keep commented for now)
+  - chmod +x node_modules/.bin/react-scripts   
   - yarn build
   - mv build/index.html build/404.html
 
@@ -25,4 +24,4 @@ deploy:
   github_token: $github_token
   local_dir: build
   on:
-    branch: dep-inclusions   # ✅ must match the branch you’re working in
+    branch: dep-inclusions   #
